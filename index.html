@@ -2,37 +2,50 @@
 <html lang="et">
 <head>
   <meta charset="UTF-8">
-  <title>Random sõnad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random sõnad – hajusrakenduste sõnavara</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Hajusrakenduste sõnavara kontroll</h1>
+<header>
+  <h1>Hajusrakenduste sõnavara kontroll</h1>
+  <p>Tõlgi sõna ja vajuta "Kontrolli" või Enter.</p>
+</header>
 
-<table border="1">
-  <thead>ac
-  <tr>
-    <th>Eesti → vene</th>
-    <th>Vene → eesti</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      <p id="et-word"></p>
-      <input id="et-answer" type="text" placeholder="Vastus vene keeles">
-      <button id="et-check">Kontrolli</button>
-      <button id="et-next">Uus sõna</button>
-      <p id="et-result"></p>
-    </td>
-    <td>
-      <p id="ru-word"></p>
-      <input id="ru-answer" type="text" placeholder="Vastus eesti keeles">
-      <button id="ru-check">Kontrolli</button>
-      <button id="ru-next">Uus sõna</button>
-      <p id="ru-result"></p>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<main>
+  <table>
+    <thead>
+    <tr>
+      <th>Eesti → vene</th>
+      <th>Vene → eesti</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td data-label="Eesti → vene">
+        <p class="word" id="et-word"></p>
+        <input id="et-answer" type="text" placeholder="Vastus vene keeles" autocomplete="off">
+        <div class="buttons">
+          <button id="et-check">Kontrolli</button>
+          <button id="et-next" class="secondary">Uus sõna</button>
+        </div>
+        <p class="result" id="et-result"></p>
+        <p class="score">Tulemus: <span id="et-score">0 / 0</span></p>
+      </td>
+      <td data-label="Vene → eesti">
+        <p class="word" id="ru-word"></p>
+        <input id="ru-answer" type="text" placeholder="Vastus eesti keeles" autocomplete="off">
+        <div class="buttons">
+          <button id="ru-check">Kontrolli</button>
+          <button id="ru-next" class="secondary">Uus sõna</button>
+        </div>
+        <p class="result" id="ru-result"></p>
+        <p class="score">Tulemus: <span id="ru-score">0 / 0</span></p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</main>
 
 <script src="script.js"></script>
 </body>

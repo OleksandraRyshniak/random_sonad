@@ -1,0 +1,123 @@
+/* Üldine paigutus ja värvid */
+:root {
+    --bg: #f2f5f9;
+    --ink: #1c2733;
+    --navy: #1f3a5f;
+    --blue: #2f6fb3;
+    --ok: #1b7f4b;
+    --bad: #b3261e;
+    --warn: #8a6100;
+    --line: #d3dbe4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+}
+
+header {
+    background: var(--navy);
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+header h1 { margin: 0 0 0.25rem; font-size: clamp(1.4rem, 4vw, 2rem); }
+header p { margin: 0; color: #cfdcec; }
+
+main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+
+/* Tabel kahe veeruga */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1rem 0;
+    table-layout: fixed;
+}
+
+th {
+    background: var(--blue);
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 6px 6px 0 0;
+}
+
+td {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 1.25rem;
+    vertical-align: top;
+}
+
+/* Kuvatav sõna */
+.word {
+    margin: 0 0 1rem;
+    min-height: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy);
+    overflow-wrap: anywhere;
+}
+
+input {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+
+input:focus-visible, button:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+}
+
+/* Nupud */
+.buttons { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+
+button {
+    flex: 1;
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--navy);
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover { background: #163050; }
+
+button.secondary { background: transparent; color: var(--navy); }
+button.secondary:hover { background: #e4ebf3; }
+
+/* Tulemuse teated */
+.result { min-height: 1.5rem; margin: 0.75rem 0 0.25rem; font-weight: 600; }
+.result.ok { color: var(--ok); }
+.result.bad { color: var(--bad); }
+.result.warn { color: var(--warn); }
+
+.score { margin: 0; color: #56657a; }
+
+/* Mobiil: veerud üksteise alla */
+@media (max-width: 640px) {
+    table, tbody, tr, td { display: block; width: 100%; }
+    thead { display: none; }
+    table { border-spacing: 0; }
+    td { border-top: 1px solid var(--line); border-radius: 6px; margin-bottom: 1rem; }
+    td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        color: var(--blue);
+    }
+}
