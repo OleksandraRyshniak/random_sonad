@@ -47,3 +47,6 @@ function createQuiz(prefix, questionKey, answerKey) {
 
 // Olemasolev variant: eestikeelne sõna, vastus vene keeles
 createQuiz('et', 'et', 'ru');
+
+// Vastupidine variant: venekeelne sõna, vastus eesti keeles
+createQuiz('ru', 'ru', 'et');

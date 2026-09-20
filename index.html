@@ -6,11 +6,34 @@
 </head>
 <body>
 <h1>Hajusrakenduste sõnavara kontroll</h1>
-<p id="word"></p>
-<input id="answer" type="text" placeholder="Vastus vene keeles">
-<button id="check">Kontrolli</button>
-<button id="next">Uus sõna</button>
-<p id="result"></p>
+
+<table border="1">
+  <thead>ac
+  <tr>
+    <th>Eesti → vene</th>
+    <th>Vene → eesti</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <p id="et-word"></p>
+      <input id="et-answer" type="text" placeholder="Vastus vene keeles">
+      <button id="et-check">Kontrolli</button>
+      <button id="et-next">Uus sõna</button>
+      <p id="et-result"></p>
+    </td>
+    <td>
+      <p id="ru-word"></p>
+      <input id="ru-answer" type="text" placeholder="Vastus eesti keeles">
+      <button id="ru-check">Kontrolli</button>
+      <button id="ru-next">Uus sõna</button>
+      <p id="ru-result"></p>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
 <script src="script.js"></script>
 </body>
 </html>
